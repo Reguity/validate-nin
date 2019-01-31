@@ -11,7 +11,7 @@ $ npm install validate-nin --save
 ```
 
 # Usage
-This example shows you how to create a small service with an `add` action which can add two numbers and how to call it.
+This example shows you how to validate Swedish Nin's ("Personnummer").
 ```js
 const validateNin = require('validate-nin');
 let isSwedishPersonNinValid = validateNin.getValidator({ country: 'se', type: 'person'});

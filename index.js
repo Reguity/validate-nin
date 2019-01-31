@@ -9,8 +9,7 @@ const validateNin = (() => {
       else { validators[country] = { [type]: isValidNinFn }; }
     },
     getValidator: ({ country, type }) => {
-      if (!(country in validators && type in validators[country]))
-        { throw new Error(`Validator not registered: [${country}, ${type}]`); }
+      if (!(country in validators && type in validators[country])) { return undefined; }
       return validators[country][type];
     }
   };
