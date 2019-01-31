@@ -1,0 +1,12 @@
+{
+  "name": "validate-nin",
+  "version": "1.0.0",
+  "description": "Validate national id numbers for people and organizations in different countries",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": ""
+  },
+  "author": "Reguity Group AB",
+  "license": "ISC"
+}
