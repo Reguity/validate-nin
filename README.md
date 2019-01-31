@@ -3,7 +3,10 @@
 validate-nin consists of pure functions to validate national identity numbers of people and organizations in various countries
 
 # Current support
-- Sweden: People and organizations
+- Sweden: People ("Personnummer") and organizations ("Organisationsnummer")
+- Denmark: People ("CPR-nummer") and organizations ("CVR-nummer")
+- United Kingdom: People ("National insurance number") and organizations ("Companies house number")
+- United States: People ("Social security number") and organizations ("Employer Identification number")
 
 # Installation
 ```
@@ -31,5 +34,4 @@ validateNin.addValidator({
 });
 ```
 
-We encourage you to put the argument to `addValidator` a module in an appropriate location within the `validators`
-directory of this repository and create a pull request.
+We encourage you to put the argument of `addValidator` as a module export in a js file in an appropriate location within the `validators` directory of this repository and create a pull request.
