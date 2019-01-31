@@ -3,10 +3,18 @@
 validate-nin consists of pure functions to validate national identity numbers of people and organizations in various countries
 
 # Current support
-- Sweden: People ("Personnummer") and organizations ("Organisationsnummer")
-- Denmark: People ("CPR-nummer") and organizations ("CVR-nummer")
-- United Kingdom: People ("National insurance number") and organizations ("Companies house number")
-- United States: People ("Social security number") and organizations ("Employer Identification number")
+- **Sweden**: 
+  - People ("Personnummer") 
+  - Organizations ("Organisationsnummer")
+- **Denmark**: 
+  - People ("CPR-nummer") 
+  - Organizations ("CVR-nummer")
+- **United Kingdom**: 
+  - People ("National insurance number") 
+  - Organizations ("Companies house number")
+- **United States**: 
+  - People ("Social security number") 
+  - Organizations ("Employer Identification number")
 
 # Installation
 ```
@@ -18,10 +26,8 @@ This example shows you how to validate Swedish Nin's ("Personnummer").
 ```js
 const validateNin = require('validate-nin');
 let isSwedishPersonNinValid = validateNin.getValidator({ country: 'se', type: 'person'});
-let okResult = isSwedishPersonNinValid("8112189876");
-// -> true
-let notOkResult = isSwedishPersonNinValid("8112189877");
-// -> false
+let okResult = isSwedishPersonNinValid("8112189876"); // -> true
+let notOkResult = isSwedishPersonNinValid("8112189877"); // -> false
 ```
 
 # Contribute
