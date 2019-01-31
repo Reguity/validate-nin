@@ -1,7 +1,7 @@
 module.exports = {
   country: 'se',
   type: 'organization',
-  isValidNinFn: nin => {
+  isValidNinFn: nin => { // "Organisationsnummer"
     nin = nin.replace(/\D/g,'');
     if (nin.length !== 10) { return false; }
     let sum = '2121212121'.split('')
