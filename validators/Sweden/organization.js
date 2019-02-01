@@ -10,5 +10,6 @@ module.exports = {
     if (sum % 10 !== 0) { return false; }
     let [ _, m ] = nin.split(/(.{2})/).filter(c => c);
     return m >= 20;
-  }
+  },
+  normalizeNinFn: nin => nin.replace(/\D/g,'')
 };

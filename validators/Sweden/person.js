@@ -11,5 +11,6 @@ module.exports = {
     let [ y, m, d ] = nin.split(/(.{2})/).filter(c => c);
     const date = new Date(`${y}-${m}-${d}`);
     return (Boolean(+date) && date.getDate() == d);
-  }
+  },
+  normalizeNinFn: nin => nin.replace(/\D/g,'')
 };

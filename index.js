@@ -4,9 +4,12 @@ const path = require('path');
 const validateNin = (() => {
   const validators = {};
   return {
-    addValidator: ({ country, type, isValidNinFn }) => {
-      if (country in validators) { validators[country][type] = isValidNinFn; }
-      else { validators[country] = { [type]: isValidNinFn }; }
+    addValidator: ({ country, type, isValidNinFn, normalizeNinFn }) => {
+      if (country in validators) {
+        validators[country][type] = { isValid: isValidNinFn, normalize: normalizeNinFn };
+      } else {
+        validators[country] = { [type]: { isValid: isValidNinFn, normalize: normalizeNinFn } };
+      }
     },
     getValidator: ({ country, type }) => {
       if (!(country in validators && type in validators[country])) { return undefined; }

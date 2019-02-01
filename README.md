@@ -1,6 +1,6 @@
 # validate-nin
 
-validate-nin consists of pure functions to validate national identity numbers of people and organizations in various countries
+validate-nin consists of pure functions to validate and normalize national identity numbers of people and organizations in various countries
 
 # Current support
 - **Denmark**:
@@ -28,9 +28,10 @@ $ npm install validate-nin --save
 This example shows you how to validate Swedish Nin's ("Personnummer").
 ```js
 const validateNin = require('validate-nin');
-let isSwedishPersonNinValid = validateNin.getValidator({ country: 'se', type: 'person'});
-let okResult = isSwedishPersonNinValid("8112189876"); // -> true
-let notOkResult = isSwedishPersonNinValid("8112189877"); // -> false
+let swedishPersonValidator = validateNin.getValidator({ country: 'se', type: 'person'});
+let okResult = swedishPersonValidator.isValidNiN("811218-9876"); // -> true
+let notOkResult = swedishPersonValidator.isValidNiN("811218-9877"); // -> false
+let normalized = swedishPersonValidator.normalizeNin("811218-9876"); // -> 8112189876
 ```
 
 # Contribute
@@ -39,7 +40,8 @@ You can easily extend validate-nin with additional validators for (country, type
 validateNin.addValidator({
   country: 'xx', // ISO 3166-1 alpha-2 code
   type: 'yy', // Either "person" or "organization"
-  isValidNinFn: nin => { /* return true if valid */ }
+  isValidNinFn: nin => { /* return true if valid */ },
+  normalizeNin: nin => { /* return normalized form */ }
 });
 ```
 
