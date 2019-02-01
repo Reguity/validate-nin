@@ -13,8 +13,10 @@ module.exports = {
     a = 10 - ('' + a).charAt(1);
     if (('' + a).slice(-1) !== nin.slice(-1)) { return false; }
     let [ y, m, d ] = nin.split(/(.{2})/).filter(c => c);
-    const date = new Date(`${y}-${m}-${d}`);
-    return (Boolean(+date) && date.getDate() == d);
+    return [ 19, 20 ].some(p => {
+      let date = new Date(`${p}${y}-${m}-${d}`);
+      return Boolean(+date) && date.getDate() == d;
+    });
   },
   normalizeNinFn: nin => nin
 };
