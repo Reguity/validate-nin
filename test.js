@@ -21,6 +21,17 @@ describe('China', () => {
   });
 });
 
+describe('India', () => {
+  test('Person', async () => {
+    let validator = validateNin.getValidator({ country: 'in', type: 'person' });
+    expect(validator.isValid('234523452343')).toBeTruthy();
+    expect(validator.isValid('234123412346')).toBeTruthy();
+    expect(validator.isValid('123412341234')).toBeFalsy();
+    expect(validator.isValid('023412341233')).toBeFalsy();
+    expect(validator.isValid('2345234523436')).toBeFalsy();
+  });
+});
+
 describe('Denmark', () => {
   test('Person', async () => {
     let validator = validateNin.getValidator({ country: 'dk', type: 'person' });

@@ -8,6 +8,8 @@ validate-nin consists of pure functions to validate and normalize national ident
 - **Denmark**:
   - People ("CPR-nummer")
   - Organizations ("CVR-nummer")
+- **India**:
+  - People ("Adhaar")
 - **Nigeria**:
   - People ("National Identification Number")
 - **Norway**:
