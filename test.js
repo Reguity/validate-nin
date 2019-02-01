@@ -1,5 +1,25 @@
 const validateNin = require('./index');
 
+describe('China', () => {
+  test('Person', async () => {
+    let validator = validateNin.getValidator({ country: 'cn', type: 'person' });
+    expect(validator.isValid('11010120170210193X')).toBeTruthy();
+    expect(validator.isValid('120103198806018241')).toBeTruthy();
+    expect(validator.isValid('310101200001013948')).toBeTruthy();
+    expect(validator.isValid('110101188606258888')).toBeTruthy();
+    expect(validator.isValid('110101201701018886')).toBeTruthy();
+    expect(validator.isValid('98765432101234567')).toBeFalsy();
+    expect(validator.isValid('9876543210123456789')).toBeFalsy();
+    expect(validator.isValid('110102YYYYMMDD888X')).toBeFalsy();
+    expect(validator.isValid('98765432101234567A')).toBeFalsy();
+    expect(validator.isValid('A87654321012345678')).toBeFalsy();
+    expect(validator.isValid('110102197810272321')).toBeFalsy();
+    expect(validator.isValid(' 11010120170210193X')).toBeFalsy();
+    expect(validator.isValid('11010120170210193X ')).toBeFalsy();
+    expect(validator.normalize('11010120170210193X')).toEqual('11010120170210193X');
+    expect(validator.normalize('120103198806018241')).toEqual('120103198806018241');
+  });
+});
 
 describe('Denmark', () => {
   test('Person', async () => {
@@ -35,6 +55,29 @@ describe('Denmark', () => {
     expect(validator.isValid('11111114 ')).toBeFalsy();
     expect(validator.isValid(' 11111114')).toBeFalsy();
     expect(validator.normalize('11111114')).toEqual('11111114');
+  });
+});
+
+describe('Nigeria', () => {
+  test('Person', async () => {
+    let validator = validateNin.getValidator({ country: 'ng', type: 'person' });
+    expect(validator.isValid('12345678901')).toBeTruthy();
+    expect(validator.isValid('123456789014')).toBeFalsy();
+    expect(validator.isValid('12345678901 ')).toBeFalsy();
+    expect(validator.isValid(' 12345678901')).toBeFalsy();
+    expect(validator.normalize('12345678901')).toEqual('12345678901');
+  });
+});
+
+describe('South Africa', () => {
+  test('Person', async () => {
+    let validator = validateNin.getValidator({ country: 'za', type: 'person' });
+    expect(validator.isValid('8001015009087')).toBeTruthy();
+    expect(validator.isValid('800101500908')).toBeFalsy();
+    expect(validator.isValid('80010150090874')).toBeFalsy();
+    expect(validator.isValid('8001015009087 ')).toBeFalsy();
+    expect(validator.isValid(' 8001015009087')).toBeFalsy();
+    expect(validator.normalize('8001015009087')).toEqual('8001015009087');
   });
 });
 

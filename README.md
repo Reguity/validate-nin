@@ -3,12 +3,18 @@
 validate-nin consists of pure functions to validate and normalize national identity numbers of people and organizations in various countries
 
 # Current support
+- **China**:
+  - People ("Identity card number")
 - **Denmark**:
   - People ("CPR-nummer")
   - Organizations ("CVR-nummer")
+- **Nigeria**:
+  - People ("National Identification Number")
 - **Norway**:
   - People ("Fødselsnummer")
   - Organizations ("Organisasjonsnummer")
+- **South Africa**:
+  - People ("Said")
 - **Sweden**:
   - People ("Personnummer")
   - Organizations ("Organisationsnummer")
