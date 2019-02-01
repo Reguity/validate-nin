@@ -3,17 +3,20 @@
 validate-nin consists of pure functions to validate national identity numbers of people and organizations in various countries
 
 # Current support
-- **Sweden**: 
-  - People ("Personnummer") 
-  - Organizations ("Organisationsnummer")
-- **Denmark**: 
-  - People ("CPR-nummer") 
+- **Denmark**:
+  - People ("CPR-nummer")
   - Organizations ("CVR-nummer")
-- **United Kingdom**: 
-  - People ("National insurance number") 
+- **Norway**:
+  - People ("Fødselsnummer)
+  - Organizations ("Organisasjonsnummer")
+- **Sweden**:
+  - People ("Personnummer")
+  - Organizations ("Organisationsnummer")
+- **United Kingdom**:
+  - People ("National insurance number")
   - Organizations ("Companies house number")
-- **United States**: 
-  - People ("Social security number") 
+- **United States**:
+  - People ("Social security number")
   - Organizations ("Employer Identification number")
 
 # Installation
