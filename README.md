@@ -7,7 +7,7 @@ validate-nin consists of pure functions to validate national identity numbers of
   - People ("CPR-nummer")
   - Organizations ("CVR-nummer")
 - **Norway**:
-  - People ("Fødselsnummer)
+  - People ("Fødselsnummer")
   - Organizations ("Organisasjonsnummer")
 - **Sweden**:
   - People ("Personnummer")
