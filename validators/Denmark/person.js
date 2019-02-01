@@ -2,6 +2,7 @@ module.exports = {
   country: 'dk',
   type: 'person',
   isValidNinFn: nin => { // "CPR-nummer"
+    if (!/^[0-9]{6}[\-\+]?[0-9]{4}?$/.test(nin)) { return false; }
     nin = nin.replace(/\D/g,'');
     if (nin.length !== 10) { return false; }
     let sum = '4327654321'.split('')
