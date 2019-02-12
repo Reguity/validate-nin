@@ -2,7 +2,7 @@ module.exports = {
   country: 'se',
   type: 'person',
   isValidNinFn: nin => { // "Personnummer"
-    if (!/^[0-9]{6,8}[\-\+]?[0-9]{4}?$/.test(nin)) { return false; }
+    if (!(/^[0-9]{6}[\-\+]?[0-9]{4}?$/.test(nin) || /^[0-9]{8}[\-\+]?[0-9]{4}?$/.test(nin))) { return false; }
     nin = nin.replace(/\D/g,'');
     let cs;
     if (nin.length === 12) {
