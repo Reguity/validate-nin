@@ -1,6 +1,7 @@
 # validate-nin
 
-validate-nin consists of pure functions to validate and normalize national identity numbers of people and organizations in various countries
+validate-nin consists of pure functions to validate and normalize national identity numbers of people and/or organizations in
+countries that use such well-recognized identity number systems.
 
 # Current support
 - **China**:
