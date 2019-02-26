@@ -19,5 +19,8 @@ module.exports = {
       return Boolean(+date) && date.getDate() == d;
     });
   },
-  normalizeNinFn: nin => nin.replace(/\D/g,'')
+  normalizeNinFn: nin => {
+    let ds = nin.replace(/\D/g,'');
+    return ds.substr(ds.length - 10);
+  }
 };
