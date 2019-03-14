@@ -132,6 +132,7 @@ describe('Sweden', () => {
     expect(validator.isValid('560120-5635 ')).toBeFalsy();
     expect(validator.isValid(' 560120-5635')).toBeFalsy();
     expect(validator.normalize('560120-5635')).toEqual('5601205635');
+    expect(validator.normalize('19560120-5635')).toEqual('5601205635');
     expect(validator.normalize('5601205635')).toEqual('5601205635');
   });
   test('Organization', async () => {
