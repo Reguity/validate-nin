@@ -47,6 +47,8 @@ describe('Denmark', () => {
     expect(validator.isValid(' 130889-0240')).toBeFalsy();
     expect(validator.normalize('130889-0240')).toEqual('1308890240');
     expect(validator.normalize('1308890240')).toEqual('1308890240');
+    expect(validator.isValid('020569-4250')).toBeTruthy();
+    expect(validator.isValid('0205694250')).toBeTruthy();
   });
   test('Organization', async () => {
     let validator = validateNin.getValidator({ country: 'dk', type: 'organization' });
