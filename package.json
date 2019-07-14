@@ -7,6 +7,10 @@
     "start": "node index.js",
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reguity/validate-nin.git"
+  },
   "devDependencies": {
     "jest": "^24.8.0"
   },
