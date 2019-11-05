@@ -115,6 +115,18 @@ describe('Norway', () => {
   });
 });
 
+describe('Finland', () => {
+  test('Person', async () => {
+    let validator = validateNin.getValidator({ country: 'fi', type: 'person' });
+    expect(validator.isValid('010101-100X')).toBeTruthy();
+    expect(validator.isValid('010101-100Å')).toBeFalsy();
+    expect(validator.isValid('290296-7808')).toBeTruthy();
+    expect(validator.isValid('2902967808')).toBeFalsy();
+    expect(validator.isValid('010198-1000')).toBeFalsy();
+    expect(validator.isValid('0101981000')).toBeFalsy();
+  });
+});
+
 describe('Sweden', () => {
   test('Person', async () => {
     let validator = validateNin.getValidator({ country: 'se', type: 'person' });
