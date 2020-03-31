@@ -12,7 +12,7 @@
     "url": "git+https://github.com/reguity/validate-nin.git"
   },
   "devDependencies": {
-    "jest": "^25.1.0"
+    "jest": "^25.2.4"
   },
   "jest": {
     "moduleFileExtensions": [
