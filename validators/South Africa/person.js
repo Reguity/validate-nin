@@ -18,5 +18,6 @@ module.exports = {
       return Boolean(+date) && date.getDate() == d;
     });
   },
-  normalizeNinFn: nin => nin
+  normalizeNinFn: nin => nin,
+  formatNinFn: normalized => normalized
 };

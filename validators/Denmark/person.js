@@ -14,5 +14,8 @@ module.exports = {
       return Boolean(+date) && date.getDate() == d;
     });
   },
-  normalizeNinFn: nin => nin.replace(/\D/g,'')
+  normalizeNinFn: nin => nin.replace(/\D/g,''),
+  formatNinFn: normalized => {
+    return `${normalized.substr(0, 6)}-${normalized.substr(6, 4)}`;
+  }
 };

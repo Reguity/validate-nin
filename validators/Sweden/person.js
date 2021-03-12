@@ -22,5 +22,8 @@ module.exports = {
   normalizeNinFn: nin => {
     let ds = nin.replace(/\D/g,'');
     return ds.substr(ds.length - 10);
+  },
+  formatNinFn: normalized => {
+    return `${normalized.substr(0, 6)}-${normalized.substr(6, 4)}`;
   }
 };

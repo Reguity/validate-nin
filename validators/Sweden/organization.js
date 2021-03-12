@@ -1,7 +1,7 @@
 module.exports = {
   country: 'se',
   type: 'organization',
-  isValidNinFn: nin => { // "Organisationsnummer" 
+  isValidNinFn: nin => { // "Organisationsnummer"
     if (!/^[0-9]{6}-?[0-9]{4}?$/.test(nin)) { return false; }
     nin = nin.replace(/\D/g,'');
     let sum = '2121212121'.split('')
@@ -10,5 +10,8 @@ module.exports = {
     let [ _, m ] = nin.split(/(.{2})/).filter(c => c);
     return m >= 20;
   },
-  normalizeNinFn: nin => nin.replace(/\D/g,'')
+  normalizeNinFn: nin => nin.replace(/\D/g,''),
+  formatNinFn: normalized => {
+    return `${normalized.substr(0, 6)}-${normalized.substr(6, 4)}`;
+  }
 };

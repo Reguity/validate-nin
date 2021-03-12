@@ -19,5 +19,8 @@ module.exports = {
   },
   normalizeNinFn: nin => {
     return nin.trim()
+  },
+  formatNinFn: normalized => {
+    return `${normalized.substr(0, 6)}-${normalized.substr(6, 4)}`;
   }
 };

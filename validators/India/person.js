@@ -16,5 +16,6 @@ module.exports = {
     ];
     return nin.split('').reverse().reduce((s,c,i) => d[s][p[i%8][c]], 0) === 0;
   },
-  normalizeNinFn: nin => nin
+  normalizeNinFn: nin => nin,
+  formatNinFn: nin => nin
 };

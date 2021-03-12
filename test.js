@@ -18,6 +18,8 @@ describe('China', () => {
     expect(validator.isValid('11010120170210193X ')).toBeFalsy();
     expect(validator.normalize('11010120170210193X')).toEqual('11010120170210193X');
     expect(validator.normalize('120103198806018241')).toEqual('120103198806018241');
+    expect(validator.format('11010120170210193X')).toEqual('11010120170210193X');
+    expect(validator.format('120103198806018241')).toEqual('120103198806018241');
   });
 });
 
@@ -29,6 +31,8 @@ describe('India', () => {
     expect(validator.isValid('123412341234')).toBeFalsy();
     expect(validator.isValid('023412341233')).toBeFalsy();
     expect(validator.isValid('2345234523436')).toBeFalsy();
+    expect(validator.normalize('2345234523436')).toEqual('2345234523436');
+    expect(validator.format('2345234523436')).toEqual('2345234523436');
   });
 });
 
@@ -45,10 +49,11 @@ describe('Denmark', () => {
     expect(validator.isValid('130889A0240')).toBeFalsy();
     expect(validator.isValid('130889-0240 ')).toBeFalsy();
     expect(validator.isValid(' 130889-0240')).toBeFalsy();
-    expect(validator.normalize('130889-0240')).toEqual('1308890240');
-    expect(validator.normalize('1308890240')).toEqual('1308890240');
     expect(validator.isValid('020569-4250')).toBeTruthy();
     expect(validator.isValid('0205694250')).toBeTruthy();
+    expect(validator.normalize('130889-0240')).toEqual('1308890240');
+    expect(validator.normalize('1308890240')).toEqual('1308890240');
+    expect(validator.format('1308890240')).toEqual('130889-0240');
   });
   test('Organization', async () => {
     let validator = validateNin.getValidator({ country: 'dk', type: 'organization' });
@@ -68,6 +73,7 @@ describe('Denmark', () => {
     expect(validator.isValid('11111114 ')).toBeFalsy();
     expect(validator.isValid(' 11111114')).toBeFalsy();
     expect(validator.normalize('11111114')).toEqual('11111114');
+    expect(validator.format('11111114')).toEqual('11111114');
   });
 });
 
@@ -79,6 +85,7 @@ describe('Nigeria', () => {
     expect(validator.isValid('12345678901 ')).toBeFalsy();
     expect(validator.isValid(' 12345678901')).toBeFalsy();
     expect(validator.normalize('12345678901')).toEqual('12345678901');
+    expect(validator.format('12345678901')).toEqual('12345678901');
   });
 });
 
@@ -91,6 +98,7 @@ describe('South Africa', () => {
     expect(validator.isValid('8001015009087 ')).toBeFalsy();
     expect(validator.isValid(' 8001015009087')).toBeFalsy();
     expect(validator.normalize('8001015009087')).toEqual('8001015009087');
+    expect(validator.format('8001015009087')).toEqual('8001015009087');
   });
 });
 
@@ -103,6 +111,7 @@ describe('Norway', () => {
     expect(validator.isValid('29029600013 ')).toBeFalsy();
     expect(validator.isValid('290296-00013')).toBeFalsy();
     expect(validator.normalize('29029600013')).toEqual('29029600013');
+    expect(validator.format('29029600013')).toEqual('29029600013');
   });
   test('Organization', async () => {
     let validator = validateNin.getValidator({ country: 'no', type: 'organization' });
@@ -112,6 +121,7 @@ describe('Norway', () => {
     expect(validator.isValid('988077-917')).toBeFalsy();
     expect(validator.normalize('988 077 917')).toEqual('988077917');
     expect(validator.normalize('988077917')).toEqual('988077917');
+    expect(validator.format('988077917')).toEqual('988077917');
   });
 });
 
@@ -124,6 +134,8 @@ describe('Finland', () => {
     expect(validator.isValid('2902967808')).toBeFalsy();
     expect(validator.isValid('010198-1000')).toBeFalsy();
     expect(validator.isValid('0101981000')).toBeFalsy();
+    expect(validator.normalize('0101981000')).toEqual('0101981000');
+    expect(validator.format('0101981000')).toEqual('010198-1000');
   });
 });
 
@@ -148,6 +160,7 @@ describe('Sweden', () => {
     expect(validator.normalize('560120-5635')).toEqual('5601205635');
     expect(validator.normalize('19560120-5635')).toEqual('5601205635');
     expect(validator.normalize('5601205635')).toEqual('5601205635');
+    expect(validator.format('5601205635')).toEqual('560120-5635');
   });
   test('Organization', async () => {
     let validator = validateNin.getValidator({ country: 'se', type: 'organization' });
@@ -163,6 +176,7 @@ describe('Sweden', () => {
     expect(validator.isValid(' 212000-0142')).toBeFalsy();
     expect(validator.normalize('212000-0142')).toEqual('2120000142');
     expect(validator.normalize('2120000142')).toEqual('2120000142');
+    expect(validator.format('2120000142')).toEqual('212000-0142');
   });
 });
 
@@ -207,6 +221,8 @@ describe('United Kingdom', () => {
     expect(validator.isValid('AB111111J')).toBeFalsy();
     expect(validator.normalize('AB123456C')).toEqual('AB123456C');
     expect(validator.normalize('NB010101 ')).toEqual('NB010101 ');
+    expect(validator.format('AB123456C')).toEqual('AB123456C');
+    expect(validator.format('NB010101 ')).toEqual('NB010101 ');
   });
   test('Organization', async () => {
     let validator = validateNin.getValidator({ country: 'gb', type: 'organization' });
@@ -220,6 +236,7 @@ describe('United Kingdom', () => {
     expect(validator.isValid(' AA12345678')).toBeFalsy();
     expect(validator.isValid('AA12345678 ')).toBeFalsy();
     expect(validator.normalize('AA12345678')).toEqual('AA12345678');
+    expect(validator.format('AA12345678')).toEqual('AA12345678');
   });
 });
 
@@ -237,8 +254,10 @@ describe('United States', () => {
     expect(validator.isValid('078051120')).toBeFalsy();
     expect(validator.isValid('219099999')).toBeFalsy();
     expect(validator.isValid('457555462')).toBeFalsy();
+    expect(validator.isValid('513-70-8763')).toBeTruthy();
     expect(validator.normalize('011-23-4567')).toEqual('011234567');
     expect(validator.normalize('011234567')).toEqual('011234567');
+    expect(validator.format('011234567')).toEqual('011-23-4567');
   });
   test('Organization', async () => {
     let validator = validateNin.getValidator({ country: 'us', type: 'organization' });
@@ -252,5 +271,6 @@ describe('United States', () => {
     expect(validator.normalize('01-1234567')).toEqual('011234567');
     expect(validator.normalize('011234567')).toEqual('011234567');
     expect(validator.normalize('01 1234567')).toEqual('011234567');
+    expect(validator.format('011234567')).toEqual('011234567');
   });
 });

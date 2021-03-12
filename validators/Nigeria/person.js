@@ -4,5 +4,6 @@ module.exports = {
   isValidNinFn: nin => { // "National Identification Number"
     return /^[0-9]{11}$/.test(nin);
   },
-  normalizeNinFn: nin => nin
+  normalizeNinFn: nin => nin,
+  formatNinFn: normalized => normalized
 };

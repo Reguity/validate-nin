@@ -12,5 +12,6 @@ module.exports = {
     const date = new Date(`${nin.substr(6,2) + y}-${m}-${d}`);
     return (Boolean(+date) && date.getDate() == d);
   },
-  normalizeNinFn: nin => nin
+  normalizeNinFn: nin => nin,
+  formatNinFn: normalized => normalized
 };
