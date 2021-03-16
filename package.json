@@ -1,6 +1,6 @@
 {
   "name": "validate-nin",
-  "version": "2.0.4",
+  "version": "2.0.6",
   "description": "Validate national id numbers for people and organizations in different countries",
   "main": "index.js",
   "scripts": {
