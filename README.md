@@ -41,7 +41,7 @@ let swedishPersonValidator = validateNin.getValidator({ country: 'se', type: 'pe
 let okResult = swedishPersonValidator.isValidNiN("811218-9876"); // -> true
 let notOkResult = swedishPersonValidator.isValidNiN("811218-9877"); // -> false
 let normalized = swedishPersonValidator.normalizeNin("811218-9876"); // -> 8112189876
-let formatted = swedishPersonValidator.normalizeNin("8112189876"); // -> 811218-9876
+let formatted = swedishPersonValidator.format("8112189876"); // -> 811218-9876
 ```
 
 # Contribute
