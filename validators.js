@@ -1,17 +1,17 @@
 module.exports = [
-    './validators/China/person',
-    './validators/Denmark/organization',
-    './validators/Denmark/person',
-    './validators/Finland/person',
-    './validators/India/person',
-    './validators/Nigeria/person',
-    './validators/Norway/organization',
-    './validators/Norway/person',
-    './validators/SouthAfrica/person',
-    './validators/Sweden/organization',
-    './validators/Sweden/person',
-    './validators/UnitedKingdom/organization',
-    './validators/UnitedKingdom/person',
-    './validators/UnitedStates/organization',
-    './validators/UnitedStates/person'
-].map(validator => require(validator));
+    require('./validators/China/person'),
+    require('./validators/Denmark/organization'),
+    require('./validators/Denmark/person'),
+    require('./validators/Finland/person'),
+    require('./validators/India/person'),
+    require('./validators/Nigeria/person'),
+    require('./validators/Norway/organization'),
+    require('./validators/Norway/person'),
+    require('./validators/SouthAfrica/person'),
+    require('./validators/Sweden/organization'),
+    require('./validators/Sweden/person'),
+    require('./validators/UnitedKingdom/organization'),
+    require( './validators/UnitedKingdom/person'),
+    require( './validators/UnitedStates/organization'),
+    require('./validators/UnitedStates/person')
+];
