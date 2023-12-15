@@ -1,5 +1,4 @@
-const fs = require('fs');
-const path = require('path');
+const validators = require('./validators');
 
 const validateNin = (() => {
   const validators = {};
@@ -23,18 +22,8 @@ const validateNin = (() => {
   };
 })();
 
-const getAllJsFiles = dir => fs.readdirSync(dir).reduce((files, file) => {
-  const name = path.join(dir, file);
-  const isDirectory = fs.statSync(name).isDirectory();
-  if (isDirectory) { return [ ...files, ...getAllJsFiles(name) ];
-  } else {
-    if (file.indexOf('.js') !== -1) { return [ ...files, name ]; }
-    else { return files; }
-  }s
-}, []);
-
-getAllJsFiles(`${ __dirname}/validators`).forEach(file => {
-  validateNin.addValidator(require(file));
+validators.forEach((validator) => {
+  validateNin.addValidator(validator);
 });
 
 module.exports = validateNin;
