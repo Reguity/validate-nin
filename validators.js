@@ -12,6 +12,6 @@ module.exports = [
     require('./validators/Sweden/person'),
     require('./validators/UnitedKingdom/organization'),
     require( './validators/UnitedKingdom/person'),
-    //require( './validators/UnitedStates/organization'),
+    require( './validators/UnitedStates/organization'),
     require('./validators/UnitedStates/person')
 ];
